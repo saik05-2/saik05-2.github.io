@@ -268,6 +268,17 @@
     display:flex; gap:10px; align-items:center;
   }
 
+  /* ---------- Certifications ---------- */
+  .cert-card{
+    display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+    border:1px solid var(--line); border-radius:6px; padding:22px 24px;
+    background:var(--bg-panel); margin-top:28px;
+  }
+  .cert-card .cert-issuer{font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px; display:block;}
+  .cert-card h3{font-size:18px; margin-bottom:8px;}
+  .cert-card .cert-meta{font-size:14px; color:var(--text-muted);}
+  .cert-card .cert-skills{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;}
+
   /* ---------- Contact ---------- */
   .contact-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:32px;}
   @media (max-width:600px){.contact-grid{grid-template-columns:1fr;}}
@@ -310,7 +321,8 @@
           <button class="scrub-mark" data-target="#skills"><span class="tc">00:40</span><span class="dot"></span></button>
           <button class="scrub-mark" data-target="#experience"><span class="tc">01:00</span><span class="dot"></span></button>
           <button class="scrub-mark" data-target="#education"><span class="tc">01:20</span><span class="dot"></span></button>
-          <button class="scrub-mark" data-target="#contact"><span class="tc">01:40</span><span class="dot"></span></button>
+          <button class="scrub-mark" data-target="#certifications"><span class="tc">01:35</span><span class="dot"></span></button>
+          <button class="scrub-mark" data-target="#contact"><span class="tc">01:50</span><span class="dot"></span></button>
         </div>
       </div>
     </div>
@@ -465,6 +477,24 @@
     <div class="achieve">🏆 Created and published gaming video edits on Fiverr.</div>
   </section>
 
+  <section id="certifications">
+    <p class="eyebrow"><span class="tc">01:35</span>Certifications</p>
+    <h2 style="font-size:28px; margin-bottom:8px;">Extras</h2>
+
+    <div class="cert-card">
+      <div>
+        <span class="cert-issuer">Deloitte · via Forage</span>
+        <h3>Data Analytics Job Simulation</h3>
+        <p class="cert-meta">Certificate of Completion — July 2026<br>Completed practical tasks in data analysis and forensic technology.</p>
+        <div class="cert-skills">
+          <span class="chip">Data Analysis</span>
+          <span class="chip">Forensic Technology</span>
+        </div>
+      </div>
+      <a class="btn" href="Deloitte_Certificate.pdf" target="_blank" rel="noopener">View Certificate ↗</a>
+    </div>
+  </section>
+
   <section id="contact">
     <p class="eyebrow"><span class="tc">01:40</span>Contact</p>
     <h2 style="font-size:28px; margin-bottom:8px;">Let's talk</h2>
@@ -492,7 +522,7 @@
 
 </main>
 
-<footer>Sai Kanekar — Mumbai, Maharashtra · Code by day, color grade by night</footer>
+<footer>Sai Kanekar — Mumbai, Maharashtra · Code by day, color grade by night </footer>
 
 <div class="toast" id="toast">Copied to clipboard</div>
 
