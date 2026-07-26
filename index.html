@@ -122,7 +122,11 @@
   .scrub-fill{
     position:absolute; left:0; top:50%; height:2px;
     background:var(--accent); transform:translateY(-50%);
-    width:0%; transition:width .1s linear, background .3s;
+    width:0%; transition:width .1s linear, background .3s, box-shadow .25s;
+    box-shadow:0 0 4px 0 var(--accent-line);
+  }
+  .scrub-fill.is-scrolling{
+    box-shadow:0 0 10px 2px var(--accent), 0 0 20px 4px var(--accent-line);
   }
   .scrub-marks{
     position:relative; display:flex; justify-content:space-between; width:100%;
@@ -564,12 +568,17 @@
     const progress = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
     fill.style.width = progress + '%';
 
+    fill.classList.add('is-scrolling');
+    clearTimeout(scrollGlowTimer);
+    scrollGlowTimer = setTimeout(() => fill.classList.remove('is-scrolling'), 250);
+
     let activeIdx = 0;
     sections.forEach((sec, i) => {
       if(sec && sec.getBoundingClientRect().top - 120 <= 0) activeIdx = i;
     });
     marks.forEach((m, i) => m.classList.toggle('active', i === activeIdx));
   }
+  let scrollGlowTimer;
   document.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
